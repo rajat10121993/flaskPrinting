@@ -1,0 +1,47 @@
+<!doctype html>
+
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock %} Home</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+    integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
+</head>
+
+<body>
+  <h1>Voucher Printing App</h1>
+  <form class="pure-form pure-form-aligned" action="#", method="POST">
+    <fieldset>
+	<div class="pure-control-group">    
+	<label for="verticle">Select Verticle</label>
+        <select name="verticle" id="verticle">
+            <option>Nursery</option>
+            <option>Yavatmal</option>
+            <option>FM-KA</option>
+	    <option>FM-TN</option>
+	    <option>Model Farm</option>
+	    <option>Central Office</option>
+	    <option>IAM</option>
+        </select>
+	<span class="pure-form-message-inline">This is a required field.</span>
+	</div>
+        <div class="pure-control-group">
+            <label for="voucher_ids">Voucher ID</label>
+            <input type="text" name="voucher_ids" id="voucher_ids" placeholder="Please enter voucher id" required>
+            <span class="pure-form-message-inline">This is a required field.</span>
+        </div>
+
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Download</button>
+        </div>
+        {% if print_error %}
+        <p style="color:red">
+          Please enter a valid voucher id 🙏
+        </p>
+        {% endif %}
+    </fieldset>
+</form>
+</body>
